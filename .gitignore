@@ -1,0 +1,6 @@
+node_modules
+dist
+*.local
+*.zip
+.DS_Store
+stitch_cross_domain_engineering_portfolio/
