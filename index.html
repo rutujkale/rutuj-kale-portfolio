@@ -1,32 +1,142 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark" />
-    <title>Rutuj Kale | AI & Data Science Engineer</title>
+    <meta name="theme-color" content="#0b0c0a" />
+    <title>Rutuj Kale | AI and Data Science Engineer</title>
     <meta
       name="description"
-      content="Portfolio of Rutuj Kale, a B.Tech Artificial Intelligence and Data Science student building practical software, machine learning, computer vision, and data-driven applications."
+      content="Portfolio of Rutuj Kale, an AI and data science engineer building systems that turn noisy data into working decisions across five shipped projects."
     />
+    <link rel="canonical" href="https://rutujkale.netlify.app/" />
+    <link rel="preload" href="/fonts/supreme-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/martian-mono-400-normal.woff2" as="font" type="font/woff2" crossorigin />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Rutuj Kale" />
-    <meta property="og:title" content="Rutuj Kale | AI & Data Science Engineer" />
+    <meta property="og:title" content="Rutuj Kale | AI and Data Science Engineer" />
     <meta
       property="og:description"
-      content="Portfolio of Rutuj Kale, a B.Tech Artificial Intelligence and Data Science student building practical software, machine learning, computer vision, and data-driven applications."
+      content="Systems that turn noisy data into working decisions. Five projects across fraud detection, DeFi analytics, computer vision, simulation and audio."
     />
-    <meta name="theme-color" content="#121414" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
+    <meta property="og:url" content="https://rutujkale.netlify.app/" />
+    <meta property="og:image" content="https://rutujkale.netlify.app/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rutuj Kale | AI and Data Science Engineer" />
+    <meta
+      name="twitter:description"
+      content="Systems that turn noisy data into working decisions. Five projects across fraud detection, DeFi analytics, computer vision, simulation and audio."
     />
+    <meta name="twitter:image" content="https://rutujkale.netlify.app/og.png" />
+    <script>
+      document.documentElement.classList.add("js");
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("motion");
+      }
+      window.setTimeout(function () {
+        var html = document.documentElement;
+        if (!html.classList.contains("is-loaded")) html.classList.remove("motion");
+      }, 6000);
+    </script>
+    <style>
+      html:not(.js) #loader { display: none !important; }
+      #curtain { position: fixed; inset: 0; z-index: 90; visibility: hidden; pointer-events: none; }
+      #loader {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: flex;
+        align-items: flex-end;
+        padding: var(--gutter, 1.5rem);
+        background: #0b0c0a;
+        color: #ede8de;
+      }
+      .boot-fallback {
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 1rem;
+        padding: 2rem 1.5rem;
+      }
+      .boot-fallback h1 {
+        max-width: 18ch;
+        font-size: clamp(2.5rem, 8vw, 6rem);
+        line-height: 0.9;
+        letter-spacing: -0.05em;
+      }
+      .boot-fallback p {
+        max-width: 48ch;
+        color: #a5a69b;
+      }
+      .boot-fallback a {
+        color: #f2b441;
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Rutuj Kale",
+        "jobTitle": "AI and Data Science Engineer",
+        "url": "https://rutujkale.netlify.app/",
+        "email": "mailto:kalerutuj2@gmail.com",
+        "sameAs": [
+          "https://github.com/rutujkale",
+          "https://www.linkedin.com/in/rutuj-kale/"
+        ],
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "MGM's Jawaharlal Nehru Engineering College"
+        },
+        "knowsAbout": [
+          "Artificial Intelligence",
+          "Data Science",
+          "Machine Learning",
+          "Computer Vision",
+          "Data Engineering",
+          "Software Development"
+        ]
+      }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="loader" role="status" aria-label="Loading portfolio">
+      <div style="width: 100%; display: flex; flex-direction: column; gap: 1.25rem">
+        <div class="loader__inner">
+          <div data-loader-out>
+            <span class="loader__name">RUTUJ KALE</span>
+            <span class="loader__meta">AI + data science / calibrating</span>
+          </div>
+          <span class="loader__count" data-loader-count>000</span>
+        </div>
+        <div class="loader__line" data-loader-line></div>
+        <div class="loader__bar"><span data-loader-bar></span></div>
+      </div>
+    </div>
+    <div id="curtain" aria-hidden="true">
+      <div class="curtain__panel"></div>
+      <div class="curtain__line"></div>
+    </div>
+    <div id="root">
+      <div class="boot-fallback">
+        <p class="label">RUTUJ KALE</p>
+        <h1>Rutuj Kale, AI and Data Science engineer.</h1>
+        <p>I build systems that turn noisy data into working decisions.</p>
+        <a href="/resume.pdf">Download resume</a>
+      </div>
+    </div>
+    <noscript>
+      <p style="padding: 1.5rem; color: #ede8de">
+        This portfolio needs JavaScript for the full experience. You can reach Rutuj at
+        <a href="mailto:kalerutuj2@gmail.com" style="color: #f2b441">kalerutuj2@gmail.com</a>.
+      </p>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
+

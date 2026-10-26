@@ -4,3 +4,4 @@ dist
 *.zip
 .DS_Store
 stitch_cross_domain_engineering_portfolio/
+.shots

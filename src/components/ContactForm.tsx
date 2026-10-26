@@ -1,39 +1,36 @@
 import { useState, type FormEvent } from "react";
 import { profile } from "../data/profile";
-import { Button } from "./Button";
 
 export function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [opened, setOpened] = useState(false);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const subject = `Portfolio message from ${name}`;
     const body = `${message}\n\n--\n${name}\n${email}`;
     window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setOpened(true);
   };
 
-  const inputClasses =
-    "mt-2 w-full rounded border border-outline-variant bg-surface-container-lowest px-3 py-3 text-on-surface placeholder:text-on-surface-variant/40 transition-colors focus:border-primary focus:outline-none";
-
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="rounded-lg border border-outline-variant bg-surface p-6 md:p-8"
-    >
-      <h2 className="font-sans text-2xl font-semibold tracking-tight text-on-surface">
-        Send a Message
-      </h2>
-      <p className="mt-2 font-mono text-xs text-on-surface-variant">
-        No backend is configured. Submitting opens your email client with the message pre-filled.
+    <form onSubmit={handleSubmit} className="border-t border-line pt-6">
+      <div className="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 className="font-display text-2xl leading-tight tracking-[-0.03em] text-ink">
+          Transmit a message
+        </h2>
+        <span className="label">FORM / 01</span>
+      </div>
+      <p className="mt-2 max-w-md text-s leading-relaxed text-muted">
+        No backend is connected. Submitting opens your email client with the message prefilled and
+        addressed to Rutuj.
       </p>
-      <div className="mt-8 space-y-6">
+
+      <div className="mt-8 grid gap-6 sm:grid-cols-2">
         <div>
-          <label
-            htmlFor="contact-name"
-            className="font-mono text-xs tracking-[0.05em] text-on-surface-variant"
-          >
+          <label htmlFor="contact-name" className="label">
             NAME
           </label>
           <input
@@ -45,14 +42,11 @@ export function ContactForm() {
             placeholder="Your name"
             value={name}
             onChange={(event) => setName(event.target.value)}
-            className={inputClasses}
+            className="field"
           />
         </div>
         <div>
-          <label
-            htmlFor="contact-email"
-            className="font-mono text-xs tracking-[0.05em] text-on-surface-variant"
-          >
+          <label htmlFor="contact-email" className="label">
             EMAIL
           </label>
           <input
@@ -64,31 +58,46 @@ export function ContactForm() {
             placeholder="you@example.com"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            className={inputClasses}
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="contact-message"
-            className="font-mono text-xs tracking-[0.05em] text-on-surface-variant"
-          >
-            MESSAGE
-          </label>
-          <textarea
-            id="contact-message"
-            name="message"
-            required
-            rows={6}
-            placeholder="How can we work together?"
-            value={message}
-            onChange={(event) => setMessage(event.target.value)}
-            className={inputClasses}
+            className="field"
           />
         </div>
       </div>
-      <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
-        <span className="font-mono text-xs text-on-surface-variant">RESPONSE: DIRECT EMAIL</span>
-        <Button type="submit">Send Message</Button>
+
+      <div className="mt-6">
+        <label htmlFor="contact-message" className="label">
+          MESSAGE
+        </label>
+        <textarea
+          id="contact-message"
+          name="message"
+          required
+          rows={7}
+          placeholder="What are we routing?"
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
+          className="field resize-y"
+        />
+      </div>
+
+      <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-5">
+        <p className="label" aria-live="polite">
+          {opened ? "EMAIL CLIENT OPENED / CHECK THE DRAFT" : "OUTPUT / DIRECT EMAIL"}
+        </p>
+        <button type="submit" className="btn btn--primary" data-fill>
+          <span className="btn__fill" aria-hidden="true" />
+          <span className="relative z-10">Transmit</span>
+          <svg
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.4"
+            strokeLinecap="square"
+            className="btn__icon relative z-10 h-3.5 w-3.5"
+            aria-hidden="true"
+          >
+            <path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" />
+          </svg>
+        </button>
       </div>
     </form>
   );

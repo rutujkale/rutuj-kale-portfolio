@@ -1,8 +1,8 @@
-export const profile = {
+﻿export const profile = {
   name: "RUTUJ KALE",
-  headline: "AI & Data Science Engineer building practical software solutions.",
+  headline: "AI and data science engineer building systems that turn noisy data into working decisions.",
   supporting:
-    "B.Tech student specializing in Artificial Intelligence and Data Science, with hands-on experience building applications using Python, Java, C#, computer vision, and data-processing technologies.",
+    "B.Tech student specializing in Artificial Intelligence and Data Science, with hands-on experience building applications using Python, Java, C#, computer vision and data-processing technologies.",
   focus: ["AI", "DATA SCIENCE", "SOFTWARE DEVELOPMENT"],
   status: "OPEN TO OPPORTUNITIES",
   email: "kalerutuj2@gmail.com",
@@ -13,11 +13,11 @@ export const profile = {
 } as const;
 
 export const education = {
-  degree: "B.Tech — Artificial Intelligence and Data Science",
+  degree: "B.Tech, Artificial Intelligence and Data Science",
   institution: "MGM's Jawaharlal Nehru Engineering College",
   cgpa: "8.42",
   coursework: [
-    "Data Structures & Algorithms",
+    "Data Structures and Algorithms",
     "Python Programming",
     "Java Programming",
     "Machine Learning",
@@ -40,3 +40,4 @@ export const softSkills = [
   "COLLABORATION",
   "EFFECTIVE COMMUNICATION",
 ] as const;
+

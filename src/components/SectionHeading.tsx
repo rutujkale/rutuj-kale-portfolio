@@ -1,14 +1,32 @@
+import type { ReactNode } from "react";
+import { cn } from "../lib/cn";
+
 interface SectionHeadingProps {
-  title: string;
   index?: string;
+  eyebrow: string;
+  title: ReactNode;
+  note?: ReactNode;
+  className?: string;
 }
 
-export function SectionHeading({ title, index }: SectionHeadingProps) {
+export function SectionHeading({ index, eyebrow, title, note, className }: SectionHeadingProps) {
   return (
-    <div className="flex items-center gap-4">
-      <h2 className="font-sans text-3xl font-semibold tracking-[-0.02em] text-on-surface">{title}</h2>
-      <div className="h-px flex-1 bg-outline-variant" aria-hidden="true" />
-      {index && <span className="shrink-0 font-mono text-sm text-on-surface-variant">{index}</span>}
+    <div className={cn("grid gap-6 md:grid-cols-12 md:items-end", className)}>
+      <div className="md:col-span-8">
+        <div className="flex items-center gap-3">
+          {index && <span className="label label-accent">{index}</span>}
+          <span className="h-px w-8 bg-line" aria-hidden="true" />
+          <span className="label">{eyebrow}</span>
+        </div>
+        <h2 className="display-tight mt-5" data-split="lines">
+          {title}
+        </h2>
+      </div>
+      {note && (
+        <div className="md:col-span-4 md:justify-self-end md:pb-1">
+          <p className="max-w-sm text-s leading-relaxed text-muted md:text-right">{note}</p>
+        </div>
+      )}
     </div>
   );
 }
