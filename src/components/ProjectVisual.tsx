@@ -12,6 +12,8 @@ const windowTitles: Record<VisualVariant, string> = {
   traffic: "traffic_monitor.py",
   disaster: "disaster_sim.unity",
   audiobook: "audio_player.py",
+  fraud: "risk_console.py",
+  chainbi: "chain_bi_dashboard.tsx",
 };
 
 export function ProjectVisual({ variant, title, className }: ProjectVisualProps) {
@@ -47,6 +49,10 @@ function renderBody(variant: VisualVariant): ReactNode {
       return <DisasterVisual />;
     case "audiobook":
       return <AudiobookVisual />;
+    case "fraud":
+      return <FraudVisual />;
+    case "chainbi":
+      return <ChainBiVisual />;
   }
 }
 
@@ -147,6 +153,70 @@ function AudiobookVisual() {
           TTS: READY
         </span>
       </div>
+    </div>
+  );
+}
+
+const shapDrivers = [78, 54, 41, 29, 18];
+
+function FraudVisual() {
+  return (
+    <div className="relative flex h-full w-full flex-col justify-between gap-4 overflow-hidden rounded border border-outline-variant bg-surface-container-lowest p-4">
+      <div className="bg-grid absolute inset-0 opacity-20" aria-hidden="true" />
+      <div className="relative flex items-start justify-between">
+        <div>
+          <span className="block font-mono text-[10px] tracking-[0.05em] text-on-surface-variant">
+            RISK SCORE
+          </span>
+          <span className="font-mono text-2xl font-semibold text-on-surface">73.2</span>
+        </div>
+        <span className="rounded border border-primary/40 bg-primary/10 px-2 py-0.5 font-mono text-[10px] tracking-[0.05em] text-primary">
+          BLOCK
+        </span>
+      </div>
+      <div className="relative h-1.5 w-full overflow-hidden rounded bg-outline-variant" aria-hidden="true">
+        <span className="absolute inset-y-0 left-0 w-[73%] bg-primary" />
+      </div>
+      <div className="relative flex flex-col gap-1.5" aria-hidden="true">
+        <span className="font-mono text-[10px] tracking-[0.05em] text-on-surface-variant">
+          SHAP DRIVERS
+        </span>
+        {shapDrivers.map((width, index) => (
+          <div key={index} className="h-1.5 w-full overflow-hidden rounded bg-outline-variant/50">
+            <span className="block h-full rounded bg-primary/70" style={{ width: `${width}%` }} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const chainBars = [42, 68, 55, 80, 36, 62, 47];
+
+function ChainBiVisual() {
+  return (
+    <div className="relative flex h-full w-full flex-col justify-between gap-4 overflow-hidden rounded border border-outline-variant bg-surface-container-lowest p-4">
+      <div className="bg-grid absolute inset-0 opacity-20" aria-hidden="true" />
+      <div className="relative flex items-center justify-between">
+        <span className="font-mono text-[10px] tracking-[0.05em] text-primary">
+          RETENTION: 21.1%
+        </span>
+        <span className="font-mono text-[10px] tracking-[0.05em] text-on-surface-variant">
+          TOP 1%: 49% TX
+        </span>
+      </div>
+      <div className="relative flex h-24 w-full items-end justify-center gap-2" aria-hidden="true">
+        {chainBars.map((height, index) => (
+          <span
+            key={index}
+            className="w-4 rounded-t-sm bg-primary/70"
+            style={{ height: `${height}%` }}
+          />
+        ))}
+      </div>
+      <span className="relative font-mono text-[10px] tracking-[0.05em] text-on-surface-variant">
+        RFM | COHORTS | DRIFT
+      </span>
     </div>
   );
 }
