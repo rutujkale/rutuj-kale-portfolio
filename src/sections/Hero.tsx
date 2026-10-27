@@ -18,8 +18,10 @@ export function Hero() {
     <section id="top" className="relative overflow-hidden border-b border-line">
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-[0.14] [mask-image:linear-gradient(to_bottom,black,transparent_75%)]" aria-hidden="true" />
       <div className="site-container relative pt-8 md:pt-12">
-        <div className="flex items-center justify-end gap-4 border-b border-line pb-3">
-          <span className="label">AI + DATA SCIENCE / 2026</span>
+        <div className="flex items-center justify-between gap-4 border-b border-line pb-3 md:justify-end">
+          <span className="label md:hidden">AI + DATA SCIENCE</span>
+          <span className="label text-dim md:hidden">2026</span>
+          <span className="label hidden md:inline">AI + DATA SCIENCE / 2026</span>
         </div>
 
         <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:items-end">

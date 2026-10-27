@@ -28,7 +28,7 @@ export function Footer() {
                 href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="nav-link gap-2"
+                className="nav-link min-h-11 gap-2 md:min-h-10"
               >
                 <GithubIcon className="h-3.5 w-3.5" />
                 GitHub
@@ -38,13 +38,13 @@ export function Footer() {
                 href={profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="nav-link gap-2"
+                className="nav-link min-h-11 gap-2 md:min-h-10"
               >
                 <LinkedinIcon className="h-3.5 w-3.5" />
                 LinkedIn
                 <span aria-hidden="true">↗</span>
               </a>
-              <a href={profile.resumeUrl} download className="nav-link gap-2">
+              <a href={profile.resumeUrl} download className="nav-link min-h-11 gap-2 md:min-h-10">
                 Resume
                 <span aria-hidden="true">↓</span>
               </a>
@@ -63,7 +63,7 @@ export function Footer() {
             <button
               type="button"
               onClick={() => scrollToTarget(0)}
-              className="nav-link"
+              className="nav-link min-h-11 md:min-h-10"
               aria-label="Back to top"
             >
               TOP ↑

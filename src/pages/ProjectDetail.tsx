@@ -36,23 +36,23 @@ export function ProjectDetail() {
     <>
       <section className="border-b border-line">
         <div className="site-container pt-8 md:pt-12">
-          <Link to="/#work" className="nav-link">
+          <Link to="/#work" className="nav-link min-h-11 md:min-h-10">
             ← Back to work
           </Link>
 
-          <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2">
+          <div className="mt-8 flex flex-wrap items-center gap-x-2 gap-y-2 sm:gap-x-3">
             <span className="label label-accent">PROJECT {project.index}</span>
-            <span className="label text-dim" aria-hidden="true">
+            <span className="label hidden text-dim sm:inline" aria-hidden="true">
               /
             </span>
             <span className="label">{project.year}</span>
-            <span className="label text-dim" aria-hidden="true">
+            <span className="label hidden text-dim sm:inline" aria-hidden="true">
               /
             </span>
             <span className="label">{project.category}</span>
             {project.label && (
               <>
-                <span className="label text-dim" aria-hidden="true">
+                <span className="label hidden text-dim sm:inline" aria-hidden="true">
                   /
                 </span>
                 <span className="label label-accent">{project.label}</span>

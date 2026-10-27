@@ -125,7 +125,7 @@ export function Navbar() {
           <button
             ref={toggleRef}
             type="button"
-            className="relative flex h-10 w-10 items-center justify-center border border-line-strong text-ink md:hidden"
+            className="relative flex h-11 w-11 items-center justify-center border border-line-strong text-ink md:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close navigation" : "Open navigation"}
@@ -174,7 +174,12 @@ export function Navbar() {
                   className="flex items-baseline justify-between border-b border-line py-5"
                   aria-current={isActive(link.id) ? "true" : undefined}
                 >
-                  <span className="font-display text-[clamp(2rem,9vw,3.5rem)] leading-none tracking-[-0.04em]">
+                  <span
+                    className={cn(
+                      "font-display text-[clamp(2rem,9vw,3.5rem)] leading-none tracking-[-0.04em]",
+                      isActive(link.id) && "text-accent",
+                    )}
+                  >
                     {link.label}
                   </span>
                   <span className="label label-accent">{link.index}</span>

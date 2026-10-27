@@ -58,6 +58,10 @@ export function SelectedWork() {
                 <span className="justify-self-end pt-1.5 text-muted transition-colors group-hover:text-accent">
                   <ArrowIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
+                <ProjectPreview
+                  project={project}
+                  className="col-span-3 mt-4 aspect-[16/9] md:hidden"
+                />
               </Link>
             ))}
           </div>

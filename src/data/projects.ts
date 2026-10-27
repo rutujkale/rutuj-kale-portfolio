@@ -7,6 +7,7 @@
 
 export interface ProjectMedia {
   src: string;
+  mobileSrc?: string;
   alt: string;
   caption: string;
   width: number;
@@ -63,6 +64,7 @@ export const projects: Project[] = [
     media: [
       {
         src: "/media/fraudlens/entry.webp",
+        mobileSrc: "/media/fraudlens/entry-sm.webp",
         alt: "FraudLens analyst console entry screen with the scoring service status.",
         caption: "Analyst console entry. Real capture from the deployed app.",
         width: 1440,
@@ -144,6 +146,7 @@ export const projects: Project[] = [
     media: [
       {
         src: "/media/chainbi/overview.webp",
+        mobileSrc: "/media/chainbi/overview-sm.webp",
         alt: "ChainBI overview page with Aave V3 activity metrics.",
         caption: "Overview page with the six-month activity read.",
         width: 1440,
