@@ -15,7 +15,7 @@
 export const education = {
   degree: "B.Tech, Artificial Intelligence and Data Science",
   institution: "MGM's Jawaharlal Nehru Engineering College",
-  cgpa: "8.42",
+  cgpa: "7.77",
   coursework: [
     "Data Structures and Algorithms",
     "Python Programming",

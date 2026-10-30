@@ -8,7 +8,7 @@ Rutuj Sunil Kale
 
 B.Tech — Artificial Intelligence and Data Science
 MGM's Jawaharlal Nehru Engineering College
-CGPA: 8.42
+CGPA: 7.77
 
 The website is intended for internship, placement, and software/AI engineering opportunities.
 
@@ -386,7 +386,7 @@ B.Tech — Artificial Intelligence and Data Science
 
 MGM's Jawaharlal Nehru Engineering College
 
-CGPA: 8.42
+CGPA: 7.77
 
 Relevant Coursework:
 
